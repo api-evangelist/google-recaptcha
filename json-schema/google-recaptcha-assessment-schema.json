@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cloud.google.com/schemas/recaptcha-enterprise/assessment.json",
+  "title": "reCAPTCHA Enterprise Assessment",
+  "description": "Schema for a reCAPTCHA Enterprise assessment request and response, used to evaluate risk scores for user interactions.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The resource name of the assessment (output only)",
+      "readOnly": true
+    },
+    "event": {
+      "$ref": "#/$defs/Event"
+    },
+    "riskAnalysis": {
+      "$ref": "#/$defs/RiskAnalysis"
+    },
+    "tokenProperties": {
+      "$ref": "#/$defs/TokenProperties"
+    }
+  },
+  "$defs": {
+    "Event": {
+      "type": "object",
+      "description": "The event being assessed",
+      "required": ["token", "siteKey"],
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "The reCAPTCHA token provided by the client-side integration"
+        },
+        "siteKey": {
+          "type": "string",
+          "description": "The site key that was used to invoke reCAPTCHA"
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "The user agent from the request"
+        },
+        "userIpAddress": {
+          "type": "string",
+          "description": "The IP address of the user"
+        },
+        "expectedAction": {
+          "type": "string",
+          "description": "The expected action for this interaction"
+        }
+      }
+    },
+    "RiskAnalysis": {
+      "type": "object",
+      "description": "Risk analysis result for the assessment",
+      "properties": {
+        "score": {
+          "type": "number",
+          "description": "Legitimacy score from 0.0 (likely bot) to 1.0 (likely human)",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "reasons": {
+          "type": "array",
+          "description": "Reasons contributing to the risk analysis",
+          "items": {
+            "type": "string",
+            "enum": [
+              "AUTOMATION",
+              "UNEXPECTED_ENVIRONMENT",
+              "TOO_MUCH_TRAFFIC",
+              "UNEXPECTED_USAGE_PATTERNS",
+              "LOW_CONFIDENCE_SCORE"
+            ]
+          }
+        }
+      }
+    },
+    "TokenProperties": {
+      "type": "object",
+      "description": "Properties of the submitted reCAPTCHA token",
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "description": "Whether the token is valid"
+        },
+        "hostname": {
+          "type": "string",
+          "description": "The hostname of the page where the token was generated"
+        },
+        "action": {
+          "type": "string",
+          "description": "The action name provided when the token was generated"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the token was generated"
+        },
+        "invalidReason": {
+          "type": "string",
+          "description": "Reason the token is invalid, if applicable",
+          "enum": ["EXPIRED", "DUPE", "MISSING", "BROWSER_ERROR"]
+        }
+      }
+    }
+  }
+}

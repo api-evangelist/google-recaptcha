@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "recaptcha": "https://cloud.google.com/recaptcha-enterprise/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Assessment": {
+      "@id": "recaptcha:Assessment",
+      "@context": {
+        "name": "schema:identifier",
+        "score": "recaptcha:riskScore",
+        "reasons": "recaptcha:riskReasons",
+        "valid": "recaptcha:tokenValid",
+        "action": "recaptcha:action",
+        "hostname": "recaptcha:hostname",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Key": {
+      "@id": "recaptcha:Key",
+      "@context": {
+        "name": "schema:identifier",
+        "displayName": "schema:name",
+        "integrationType": "recaptcha:integrationType",
+        "allowedDomains": "recaptcha:allowedDomains",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Event": {
+      "@id": "recaptcha:Event",
+      "@context": {
+        "token": "recaptcha:token",
+        "siteKey": "recaptcha:siteKey",
+        "userAgent": "recaptcha:userAgent",
+        "userIpAddress": "recaptcha:userIpAddress",
+        "expectedAction": "recaptcha:expectedAction"
+      }
+    }
+  }
+}
