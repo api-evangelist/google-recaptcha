@@ -1,10 +1,12 @@
+aid: google-recaptcha
 name: Google reCAPTCHA
 description: Google reCAPTCHA is a security service that protects websites and applications from spam and abuse by verifying that interactions are from real humans rather than bots, offering Enterprise and standard APIs for site verification and risk assessment.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-recaptcha/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
 - Security
 - Bot Detection
