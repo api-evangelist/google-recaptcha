@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: reCAPTCHA Enterprise API
+  title: Google reCAPTCHA reCAPTCHA Enterprise API
   description: >-
     The reCAPTCHA Enterprise API provides bot detection and fraud prevention
     by creating assessments for user interaction tokens. It supports managing
@@ -28,7 +28,7 @@ paths:
   /projects/{projectId}/assessments:
     post:
       operationId: createAssessment
-      summary: Create assessment
+      summary: Google reCAPTCHA Create assessment
       description: >-
         Creates an assessment of a reCAPTCHA token. Returns a risk score
         between 0.0 and 1.0, reason codes, and token properties.
@@ -56,7 +56,7 @@ paths:
   /projects/{projectId}/assessments/{assessmentId}:annotate:
     post:
       operationId: annotateAssessment
-      summary: Annotate assessment
+      summary: Google reCAPTCHA Annotate assessment
       description: >-
         Annotates an existing assessment with additional information to improve
         future risk analysis. Annotations provide feedback on whether the
@@ -91,7 +91,7 @@ paths:
   /projects/{projectId}/keys:
     get:
       operationId: listKeys
-      summary: List keys
+      summary: Google reCAPTCHA List keys
       description: Lists all reCAPTCHA keys for the project.
       tags:
         - Keys
@@ -121,7 +121,7 @@ paths:
                     type: string
     post:
       operationId: createKey
-      summary: Create key
+      summary: Google reCAPTCHA Create key
       description: Creates a new reCAPTCHA site key.
       tags:
         - Keys
@@ -143,7 +143,7 @@ paths:
   /projects/{projectId}/keys/{keyId}:
     get:
       operationId: getKey
-      summary: Get key
+      summary: Google reCAPTCHA Get key
       description: Retrieves the specified reCAPTCHA key.
       tags:
         - Keys
@@ -163,7 +163,7 @@ paths:
                 $ref: '#/components/schemas/Key'
     delete:
       operationId: deleteKey
-      summary: Delete key
+      summary: Google reCAPTCHA Delete key
       description: Deletes the specified reCAPTCHA key.
       tags:
         - Keys
