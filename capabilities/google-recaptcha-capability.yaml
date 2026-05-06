@@ -1,0 +1,276 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google reCAPTCHA reCAPTCHA Enterprise API
+  description: The reCAPTCHA Enterprise API provides bot detection and fraud prevention by creating assessments for user interaction
+    tokens. It supports managing site keys, creating and annotating assessments, and configuring firewall policies.
+  tags:
+  - Google
+  - Recaptcha
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-recaptcha
+    baseUri: https://recaptchaenterprise.googleapis.com/v1
+    description: Google reCAPTCHA reCAPTCHA Enterprise API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_RECAPTCHA_TOKEN}}'
+    resources:
+    - name: projects-projectid-assessments
+      path: /projects/{projectId}/assessments
+      operations:
+      - name: createassessment
+        method: POST
+        description: Google reCAPTCHA Create assessment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-assessments-assessmentid-anno
+      path: /projects/{projectId}/assessments/{assessmentId}:annotate
+      operations:
+      - name: annotateassessment
+        method: POST
+        description: Google reCAPTCHA Annotate assessment
+        inputParameters:
+        - name: assessmentId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-keys
+      path: /projects/{projectId}/keys
+      operations:
+      - name: listkeys
+        method: GET
+        description: Google reCAPTCHA List keys
+        inputParameters:
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createkey
+        method: POST
+        description: Google reCAPTCHA Create key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-keys-keyid
+      path: /projects/{projectId}/keys/{keyId}
+      operations:
+      - name: getkey
+        method: GET
+        description: Google reCAPTCHA Get key
+        inputParameters:
+        - name: keyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletekey
+        method: DELETE
+        description: Google reCAPTCHA Delete key
+        inputParameters:
+        - name: keyId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-recaptcha-rest
+    description: REST adapter for Google reCAPTCHA reCAPTCHA Enterprise API.
+    resources:
+    - path: /projects/{projectId}/assessments
+      name: createassessment
+      operations:
+      - method: POST
+        name: createassessment
+        description: Google reCAPTCHA Create assessment
+        call: google-recaptcha.createassessment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/assessments/{assessmentId}:annotate
+      name: annotateassessment
+      operations:
+      - method: POST
+        name: annotateassessment
+        description: Google reCAPTCHA Annotate assessment
+        call: google-recaptcha.annotateassessment
+        with:
+          assessmentId: rest.assessmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/keys
+      name: listkeys
+      operations:
+      - method: GET
+        name: listkeys
+        description: Google reCAPTCHA List keys
+        call: google-recaptcha.listkeys
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/keys
+      name: createkey
+      operations:
+      - method: POST
+        name: createkey
+        description: Google reCAPTCHA Create key
+        call: google-recaptcha.createkey
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/keys/{keyId}
+      name: getkey
+      operations:
+      - method: GET
+        name: getkey
+        description: Google reCAPTCHA Get key
+        call: google-recaptcha.getkey
+        with:
+          keyId: rest.keyId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/keys/{keyId}
+      name: deletekey
+      operations:
+      - method: DELETE
+        name: deletekey
+        description: Google reCAPTCHA Delete key
+        call: google-recaptcha.deletekey
+        with:
+          keyId: rest.keyId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-recaptcha-mcp
+    transport: http
+    description: MCP adapter for Google reCAPTCHA reCAPTCHA Enterprise API for AI agent use.
+    tools:
+    - name: createassessment
+      description: Google reCAPTCHA Create assessment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-recaptcha.createassessment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: annotateassessment
+      description: Google reCAPTCHA Annotate assessment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-recaptcha.annotateassessment
+      with:
+        assessmentId: tools.assessmentId
+      inputParameters:
+      - name: assessmentId
+        type: string
+        description: assessmentId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listkeys
+      description: Google reCAPTCHA List keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-recaptcha.listkeys
+      with:
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createkey
+      description: Google reCAPTCHA Create key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-recaptcha.createkey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getkey
+      description: Google reCAPTCHA Get key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-recaptcha.getkey
+      with:
+        keyId: tools.keyId
+      inputParameters:
+      - name: keyId
+        type: string
+        description: keyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletekey
+      description: Google reCAPTCHA Delete key
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-recaptcha.deletekey
+      with:
+        keyId: tools.keyId
+      inputParameters:
+      - name: keyId
+        type: string
+        description: keyId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_RECAPTCHA_TOKEN: GOOGLE_RECAPTCHA_TOKEN
