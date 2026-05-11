@@ -71,6 +71,10 @@ common:
     url: https://status.cloud.google.com
   - type: JSON-LD
     url: json-ld/google-recaptcha-context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
