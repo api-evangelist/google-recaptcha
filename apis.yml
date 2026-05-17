@@ -67,9 +67,9 @@ common:
     url: https://cloud.google.com/recaptcha-enterprise/docs/libraries
   - type: Support
     url: https://cloud.google.com/recaptcha-enterprise/docs/support
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-recaptcha-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
