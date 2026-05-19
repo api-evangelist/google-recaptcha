@@ -1,0 +1,193 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google reCAPTCHA reCAPTCHA Enterprise API — Keys
+  description: 'Google reCAPTCHA reCAPTCHA Enterprise API — Keys. 4 operations. Lead operation: Google reCAPTCHA List keys.
+    Self-contained Naftiko capability covering one Google Recaptcha business surface.'
+  tags:
+  - Google Recaptcha
+  - Keys
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_RECAPTCHA_API_KEY: GOOGLE_RECAPTCHA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: recaptcha-enterprise-keys
+    baseUri: https://recaptchaenterprise.googleapis.com/v1
+    description: Google reCAPTCHA reCAPTCHA Enterprise API — Keys business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-keys
+      path: /projects/{projectId}/keys
+      operations:
+      - name: listkeys
+        method: GET
+        description: Google reCAPTCHA List keys
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createkey
+        method: POST
+        description: Google reCAPTCHA Create key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-keys-keyId
+      path: /projects/{projectId}/keys/{keyId}
+      operations:
+      - name: getkey
+        method: GET
+        description: Google reCAPTCHA Get key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: keyId
+          in: path
+          type: string
+          required: true
+      - name: deletekey
+        method: DELETE
+        description: Google reCAPTCHA Delete key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: keyId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_RECAPTCHA_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: recaptcha-enterprise-keys-rest
+    port: 8080
+    description: REST adapter for Google reCAPTCHA reCAPTCHA Enterprise API — Keys. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/keys
+      name: projects-projectid-keys
+      description: REST surface for projects-projectId-keys.
+      operations:
+      - method: GET
+        name: listkeys
+        description: Google reCAPTCHA List keys
+        call: recaptcha-enterprise-keys.listkeys
+        with:
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createkey
+        description: Google reCAPTCHA Create key
+        call: recaptcha-enterprise-keys.createkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/keys/{keyid}
+      name: projects-projectid-keys-keyid
+      description: REST surface for projects-projectId-keys-keyId.
+      operations:
+      - method: GET
+        name: getkey
+        description: Google reCAPTCHA Get key
+        call: recaptcha-enterprise-keys.getkey
+        with:
+          keyId: rest.keyId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletekey
+        description: Google reCAPTCHA Delete key
+        call: recaptcha-enterprise-keys.deletekey
+        with:
+          keyId: rest.keyId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: recaptcha-enterprise-keys-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google reCAPTCHA reCAPTCHA Enterprise API — Keys. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-recaptcha-list-keys
+      description: Google reCAPTCHA List keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: recaptcha-enterprise-keys.listkeys
+      with:
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-recaptcha-create-key
+      description: Google reCAPTCHA Create key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: recaptcha-enterprise-keys.createkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-recaptcha-get-key
+      description: Google reCAPTCHA Get key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: recaptcha-enterprise-keys.getkey
+      with:
+        keyId: tools.keyId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-recaptcha-delete-key
+      description: Google reCAPTCHA Delete key
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: recaptcha-enterprise-keys.deletekey
+      with:
+        keyId: tools.keyId
+      outputParameters:
+      - type: object
+        mapping: $.
