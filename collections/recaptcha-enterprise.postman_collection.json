@@ -1,0 +1,875 @@
+{
+  "item": [
+    {
+      "id": "06aba26a-10ca-4b06-b15b-cf732aaf3d32",
+      "name": "Assessments",
+      "description": {
+        "content": "Create and annotate risk assessments",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "76dc7d1c-b403-4a13-b2d0-58d78938fc11",
+          "name": "Google reCAPTCHA Create assessment",
+          "request": {
+            "name": "Google reCAPTCHA Create assessment",
+            "description": {
+              "content": "Creates an assessment of a reCAPTCHA token. Returns a risk score between 0.0 and 1.0, reason codes, and token properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "assessments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18b5207d-345b-46ba-a1df-905f5bc7bc4f",
+              "name": "Assessment created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "assessments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"event\": {\n    \"token\": \"string\",\n    \"siteKey\": \"string\",\n    \"userAgent\": \"string\",\n    \"userIpAddress\": \"string\",\n    \"expectedAction\": \"string\"\n  },\n  \"riskAnalysis\": {\n    \"score\": 0.8955540438887875,\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": false,\n    \"hostname\": \"string\",\n    \"action\": \"string\",\n    \"createTime\": \"1980-11-10T14:28:01.913Z\",\n    \"invalidReason\": \"EXPIRED\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e59d642-e403-4fcb-9efb-23fccb2c6f2e",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "assessments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dc3870d2-388c-4ec3-a432-72f2dfc05a1e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "assessments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ce4464a-f2e2-47db-a705-5c435bfc115a",
+          "name": "Google reCAPTCHA Annotate assessment",
+          "request": {
+            "name": "Google reCAPTCHA Annotate assessment",
+            "description": {
+              "content": "Annotates an existing assessment with additional information to improve future risk analysis. Annotations provide feedback on whether the assessment was correct.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "assessments",
+                "{{assessmentId}}:annotate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotation\": \"<string>\",\n  \"reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a8b936c-abcc-4fd2-869f-8beed8e40af4",
+              "name": "Annotation recorded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "assessments",
+                    "{{assessmentId}}:annotate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotation\": \"<string>\",\n  \"reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "960ca7e5-8dda-4c92-839a-f4146df4baee",
+      "name": "Keys",
+      "description": {
+        "content": "Manage reCAPTCHA site keys",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "823f6a7a-f7c8-41fc-8b69-f7046b6d8921",
+          "name": "Google reCAPTCHA List keys",
+          "request": {
+            "name": "Google reCAPTCHA List keys",
+            "description": {
+              "content": "Lists all reCAPTCHA keys for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fe3c9c4-627c-4622-b9e3-585a58e08459",
+              "name": "List of keys",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"keys\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"webSettings\": {\n        \"allowAllDomains\": false,\n        \"allowedDomains\": [\n          \"string\",\n          \"string\"\n        ],\n        \"integrationType\": \"INVISIBLE\"\n      },\n      \"androidSettings\": {\n        \"allowAllPackageNames\": true,\n        \"allowedPackageNames\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"iosSettings\": {\n        \"allowAllBundleIds\": false,\n        \"allowedBundleIds\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"createTime\": \"2001-01-12T09:30:53.760Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"webSettings\": {\n        \"allowAllDomains\": true,\n        \"allowedDomains\": [\n          \"string\",\n          \"string\"\n        ],\n        \"integrationType\": \"SCORE\"\n      },\n      \"androidSettings\": {\n        \"allowAllPackageNames\": false,\n        \"allowedPackageNames\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"iosSettings\": {\n        \"allowAllBundleIds\": false,\n        \"allowedBundleIds\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"createTime\": \"1965-09-16T23:07:07.871Z\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0e4e297-c354-4b39-a8b7-592fd0bceba0",
+          "name": "Google reCAPTCHA Create key",
+          "request": {
+            "name": "Google reCAPTCHA Create key",
+            "description": {
+              "content": "Creates a new reCAPTCHA site key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"<string>\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "397f26b3-957b-4f7b-b28d-4d65159c6088",
+              "name": "Key created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"<string>\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"webSettings\": {\n    \"allowAllDomains\": false,\n    \"allowedDomains\": [\n      \"string\",\n      \"string\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": true,\n    \"allowedPackageNames\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": false,\n    \"allowedBundleIds\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"createTime\": \"1965-05-21T14:03:46.893Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66f4bda1-a197-4646-8068-d4f8db783464",
+          "name": "Google reCAPTCHA Get key",
+          "request": {
+            "name": "Google reCAPTCHA Get key",
+            "description": {
+              "content": "Retrieves the specified reCAPTCHA key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "keys",
+                ":keyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2812f96c-816b-4dd0-8321-32e6d49e71b0",
+              "name": "Key details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "keys",
+                    ":keyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"webSettings\": {\n    \"allowAllDomains\": false,\n    \"allowedDomains\": [\n      \"string\",\n      \"string\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": true,\n    \"allowedPackageNames\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": false,\n    \"allowedBundleIds\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"createTime\": \"1965-05-21T14:03:46.893Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad932824-4f22-46e3-a1a3-e7f49e804dbf",
+          "name": "Google reCAPTCHA Delete key",
+          "request": {
+            "name": "Google reCAPTCHA Delete key",
+            "description": {
+              "content": "Deletes the specified reCAPTCHA key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "keys",
+                ":keyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "keyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75f96085-2e75-497e-9be7-f65e2a4d5030",
+              "name": "Key deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "keys",
+                    ":keyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "keyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://recaptchaenterprise.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "assessmentId"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3ed78322-8ef9-44af-b6f9-271f0c93b98a",
+    "name": "Google reCAPTCHA reCAPTCHA Enterprise API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The reCAPTCHA Enterprise API provides bot detection and fraud prevention by creating assessments for user interaction tokens. It supports managing site keys, creating and annotating assessments, and configuring firewall policies.\n\nContact Support:\n Name: Google Cloud Support",
+      "type": "text/plain"
+    }
+  }
+}

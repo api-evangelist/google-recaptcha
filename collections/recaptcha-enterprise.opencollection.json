@@ -1,0 +1,189 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google reCAPTCHA reCAPTCHA Enterprise API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assessments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google reCAPTCHA Create assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/assessments",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an assessment of a reCAPTCHA token. Returns a risk score between 0.0 and 1.0, reason codes, and token properties."
+        },
+        {
+          "info": {
+            "name": "Google reCAPTCHA Annotate assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/assessments/:assessmentId:annotate",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              },
+              {
+                "name": "assessmentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Annotates an existing assessment with additional information to improve future risk analysis. Annotations provide feedback on whether the assessment was correct."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google reCAPTCHA List keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/keys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists all reCAPTCHA keys for the project."
+        },
+        {
+          "info": {
+            "name": "Google reCAPTCHA Create key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/keys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new reCAPTCHA site key."
+        },
+        {
+          "info": {
+            "name": "Google reCAPTCHA Get key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/keys/:keyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              },
+              {
+                "name": "keyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the specified reCAPTCHA key."
+        },
+        {
+          "info": {
+            "name": "Google reCAPTCHA Delete key",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/keys/:keyId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              },
+              {
+                "name": "keyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the specified reCAPTCHA key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
