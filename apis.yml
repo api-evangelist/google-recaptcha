@@ -55,6 +55,12 @@ apis:
       - type: Documentation
         url: https://developers.google.com/recaptcha/docs/verify
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-recaptcha-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-recaptcha-domain-security.yml
+  - type: Authentication
+    url: authentication/google-recaptcha-authentication.yml
   - type: OAuthScopes
     url: scopes/google-recaptcha-scopes.yml
   - type: GitHubOrganization
