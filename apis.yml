@@ -55,6 +55,8 @@ apis:
       - type: Documentation
         url: https://developers.google.com/recaptcha/docs/verify
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-recaptcha-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-recaptcha-vulnerability-disclosure.yml
   - type: DomainSecurity
