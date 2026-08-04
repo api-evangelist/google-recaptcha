@@ -1,0 +1,497 @@
+{
+  "info": {
+    "_postman_id": "77828ed5-65a5-4bd4-bf95-504e49362549",
+    "name": "Google reCAPTCHA reCAPTCHA Enterprise Assessments Keys API",
+    "description": "The reCAPTCHA Enterprise API provides bot detection and fraud prevention by creating assessments for user interaction tokens. It supports managing site keys, creating and annotating assessments, and configuring firewall policies.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:59.000Z",
+    "updatedAt": "2026-07-28T01:49:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-77828ed5-65a5-4bd4-bf95-504e49362549"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "keys",
+              "item": [
+                {
+                  "name": "{keyId}",
+                  "item": [
+                    {
+                      "name": "Google reCAPTCHA Get key",
+                      "id": "452954d7-c071-45ac-b0c6-227d4b2f3d5b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/keys/:keyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "keys",
+                            ":keyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3a8297ec-ef8f-4aae-8cd0-4f022dcb46eb",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) The Google Cloud project ID"
+                            },
+                            {
+                              "id": "a615d91e-a971-47a7-babd-87145d25c802",
+                              "key": "keyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the specified reCAPTCHA key."
+                      },
+                      "response": [
+                        {
+                          "id": "42caa07d-eeef-4f17-8a67-768a283537f5",
+                          "name": "Key details",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/keys/:keyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "keys",
+                                ":keyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                },
+                                {
+                                  "key": "keyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"ea_f5\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:49:59.000Z",
+                          "updatedAt": "2026-07-28T01:49:59.000Z",
+                          "uid": "35240-42caa07d-eeef-4f17-8a67-768a283537f5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-452954d7-c071-45ac-b0c6-227d4b2f3d5b"
+                    },
+                    {
+                      "name": "Google reCAPTCHA Delete key",
+                      "id": "b3bf24cb-f643-4da1-baa8-186f1235706c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/keys/:keyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "keys",
+                            ":keyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "fa0df0c7-e777-4306-abd2-5f42fee61f61",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) The Google Cloud project ID"
+                            },
+                            {
+                              "id": "c7e3eaa2-ee1d-4aa4-948d-f8aa2ea0fd85",
+                              "key": "keyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes the specified reCAPTCHA key."
+                      },
+                      "response": [
+                        {
+                          "id": "871febd3-9a0d-4ff8-849e-15577ebf6b3e",
+                          "name": "Key deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/keys/:keyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "keys",
+                                ":keyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                },
+                                {
+                                  "key": "keyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:49:59.000Z",
+                          "updatedAt": "2026-07-28T01:49:59.000Z",
+                          "uid": "35240-871febd3-9a0d-4ff8-849e-15577ebf6b3e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-b3bf24cb-f643-4da1-baa8-186f1235706c"
+                    }
+                  ],
+                  "id": "74fe78e4-8b47-44cb-a368-49ae1b4ad469",
+                  "createdAt": "2026-07-28T01:49:59.000Z",
+                  "updatedAt": "2026-07-28T01:49:59.000Z",
+                  "uid": "35240-74fe78e4-8b47-44cb-a368-49ae1b4ad469"
+                },
+                {
+                  "name": "Google reCAPTCHA List keys",
+                  "id": "6a4e19c3-1870-428c-8ef0-97955a9b4b75",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectId/keys?pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectId",
+                        "keys"
+                      ],
+                      "query": [
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "66550df1-d3be-4aa8-ad4b-df0052970488",
+                          "key": "projectId",
+                          "value": "<string>",
+                          "description": "(Required) The Google Cloud project ID"
+                        }
+                      ]
+                    },
+                    "description": "Lists all reCAPTCHA keys for the project."
+                  },
+                  "response": [
+                    {
+                      "id": "9770f7d3-40d0-447d-9965-a922c110a9fd",
+                      "name": "List of keys",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/keys?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "keys"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"keys\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"webSettings\": {\n        \"allowAllDomains\": \"<boolean>\",\n        \"allowedDomains\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"integrationType\": \"SCORE\"\n      },\n      \"androidSettings\": {\n        \"allowAllPackageNames\": \"<boolean>\",\n        \"allowedPackageNames\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"iosSettings\": {\n        \"allowAllBundleIds\": \"<boolean>\",\n        \"allowedBundleIds\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"labels\": {\n        \"est_8cc\": \"<string>\",\n        \"ad_c4\": \"<string>\",\n        \"nisi5_\": \"<string>\",\n        \"consectetur3_\": \"<string>\",\n        \"laborum10\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"webSettings\": {\n        \"allowAllDomains\": \"<boolean>\",\n        \"allowedDomains\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"integrationType\": \"INVISIBLE\"\n      },\n      \"androidSettings\": {\n        \"allowAllPackageNames\": \"<boolean>\",\n        \"allowedPackageNames\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"iosSettings\": {\n        \"allowAllBundleIds\": \"<boolean>\",\n        \"allowedBundleIds\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"labels\": {\n        \"ad1\": \"<string>\",\n        \"magna_4\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-9770f7d3-40d0-447d-9965-a922c110a9fd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:49:59.000Z",
+                  "updatedAt": "2026-07-28T01:49:59.000Z",
+                  "uid": "35240-6a4e19c3-1870-428c-8ef0-97955a9b4b75"
+                },
+                {
+                  "name": "Google reCAPTCHA Create key",
+                  "id": "7026d522-b085-4ad6-9866-7fd6e1868d3c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"ea_f5\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectId/keys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectId",
+                        "keys"
+                      ],
+                      "variable": [
+                        {
+                          "id": "dfc51016-15f7-49f8-9b6a-e7adc572520d",
+                          "key": "projectId",
+                          "value": "<string>",
+                          "description": "(Required) The Google Cloud project ID"
+                        }
+                      ]
+                    },
+                    "description": "Creates a new reCAPTCHA site key."
+                  },
+                  "response": [
+                    {
+                      "id": "e7871063-eabc-49cd-b458-b10dd9ec8b71",
+                      "name": "Key created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"ea_f5\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/keys",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "keys"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"webSettings\": {\n    \"allowAllDomains\": \"<boolean>\",\n    \"allowedDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"integrationType\": \"CHECKBOX\"\n  },\n  \"androidSettings\": {\n    \"allowAllPackageNames\": \"<boolean>\",\n    \"allowedPackageNames\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"iosSettings\": {\n    \"allowAllBundleIds\": \"<boolean>\",\n    \"allowedBundleIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"labels\": {\n    \"ea_f5\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-e7871063-eabc-49cd-b458-b10dd9ec8b71"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:49:59.000Z",
+                  "updatedAt": "2026-07-28T01:49:59.000Z",
+                  "uid": "35240-7026d522-b085-4ad6-9866-7fd6e1868d3c"
+                }
+              ],
+              "id": "e1bb2cb3-41cb-480d-8a33-b5c61772cbdd",
+              "createdAt": "2026-07-28T01:49:59.000Z",
+              "updatedAt": "2026-07-28T01:49:59.000Z",
+              "uid": "35240-e1bb2cb3-41cb-480d-8a33-b5c61772cbdd"
+            }
+          ],
+          "id": "ef4ad2cd-c851-45fd-adc6-50349c7763c9",
+          "createdAt": "2026-07-28T01:49:59.000Z",
+          "updatedAt": "2026-07-28T01:49:59.000Z",
+          "uid": "35240-ef4ad2cd-c851-45fd-adc6-50349c7763c9"
+        }
+      ],
+      "id": "816ea6b9-ba50-48d2-87f9-2674f2ebb885",
+      "createdAt": "2026-07-28T01:49:59.000Z",
+      "updatedAt": "2026-07-28T01:49:59.000Z",
+      "uid": "35240-816ea6b9-ba50-48d2-87f9-2674f2ebb885"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://recaptchaenterprise.googleapis.com/v1"
+    }
+  ]
+}

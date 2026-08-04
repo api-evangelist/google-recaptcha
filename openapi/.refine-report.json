@@ -1,0 +1,16 @@
+{
+  "provider": "google-recaptcha",
+  "sources": [
+    "google-recaptcha-assessments-api-openapi.yml",
+    "google-recaptcha-keys-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-recaptcha-assessments-api-openapi.yml",
+    "google-recaptcha-keys-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

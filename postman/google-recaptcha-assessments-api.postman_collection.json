@@ -1,0 +1,418 @@
+{
+  "info": {
+    "_postman_id": "48996291-2d59-47ec-be38-e840dad8d804",
+    "name": "Google reCAPTCHA reCAPTCHA Enterprise Assessments API",
+    "description": "The reCAPTCHA Enterprise API provides bot detection and fraud prevention by creating assessments for user interaction tokens. It supports managing site keys, creating and annotating assessments, and configuring firewall policies.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:58.000Z",
+    "updatedAt": "2026-07-28T01:49:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-48996291-2d59-47ec-be38-e840dad8d804"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "assessments",
+              "item": [
+                {
+                  "name": "{assessmentId}:annotate",
+                  "item": [
+                    {
+                      "name": "Google reCAPTCHA Annotate assessment",
+                      "id": "5151c98d-c2df-4b13-b75c-ab8b83f1acd3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"annotation\": \"PASSWORD_CORRECT\",\n  \"reasons\": [\n    \"PAYMENT_HEURISTICS\",\n    \"FAILED_TWO_FACTOR\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/assessments/{{assessmentId}}:annotate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "assessments",
+                            "{{assessmentId}}:annotate"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e8249d9b-62c9-4ce8-846f-f21af0f9dcdd",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) The Google Cloud project ID"
+                            }
+                          ]
+                        },
+                        "description": "Annotates an existing assessment with additional information to improve future risk analysis. Annotations provide feedback on whether the assessment was correct."
+                      },
+                      "response": [
+                        {
+                          "id": "cff96eb5-8660-4501-8337-6af24114f6df",
+                          "name": "Annotation recorded",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"annotation\": \"PASSWORD_CORRECT\",\n  \"reasons\": [\n    \"PAYMENT_HEURISTICS\",\n    \"FAILED_TWO_FACTOR\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/assessments/{{assessmentId}}:annotate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "assessments",
+                                "{{assessmentId}}:annotate"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:49:59.000Z",
+                          "updatedAt": "2026-07-28T01:49:59.000Z",
+                          "uid": "35240-cff96eb5-8660-4501-8337-6af24114f6df"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:58.000Z",
+                      "updatedAt": "2026-07-28T01:49:58.000Z",
+                      "uid": "35240-5151c98d-c2df-4b13-b75c-ab8b83f1acd3"
+                    }
+                  ],
+                  "id": "3b127470-0fd5-4740-82fe-3d5855731f5e",
+                  "createdAt": "2026-07-28T01:49:58.000Z",
+                  "updatedAt": "2026-07-28T01:49:58.000Z",
+                  "uid": "35240-3b127470-0fd5-4740-82fe-3d5855731f5e"
+                },
+                {
+                  "name": "Google reCAPTCHA Create assessment",
+                  "id": "cb751ac5-8a3b-48d9-8d40-963ffc3ecb60",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  },\n  \"riskAnalysis\": {\n    \"score\": \"<float>\",\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": \"<boolean>\",\n    \"hostname\": \"<string>\",\n    \"action\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"invalidReason\": \"BROWSER_ERROR\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectId/assessments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectId",
+                        "assessments"
+                      ],
+                      "variable": [
+                        {
+                          "id": "fbb63b86-efe3-4711-b0c8-f7f01f17a32e",
+                          "key": "projectId",
+                          "value": "<string>",
+                          "description": "(Required) The Google Cloud project ID"
+                        }
+                      ]
+                    },
+                    "description": "Creates an assessment of a reCAPTCHA token. Returns a risk score between 0.0 and 1.0, reason codes, and token properties."
+                  },
+                  "response": [
+                    {
+                      "id": "89ccc648-39cf-4bb6-8e20-5ff5014c641d",
+                      "name": "Assessment created successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  },\n  \"riskAnalysis\": {\n    \"score\": \"<float>\",\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": \"<boolean>\",\n    \"hostname\": \"<string>\",\n    \"action\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"invalidReason\": \"BROWSER_ERROR\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/assessments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "assessments"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  },\n  \"riskAnalysis\": {\n    \"score\": \"<float>\",\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": \"<boolean>\",\n    \"hostname\": \"<string>\",\n    \"action\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"invalidReason\": \"BROWSER_ERROR\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-89ccc648-39cf-4bb6-8e20-5ff5014c641d"
+                    },
+                    {
+                      "id": "a06ec74d-e82e-4753-aaa7-9927b427b3c4",
+                      "name": "Invalid request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  },\n  \"riskAnalysis\": {\n    \"score\": \"<float>\",\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": \"<boolean>\",\n    \"hostname\": \"<string>\",\n    \"action\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"invalidReason\": \"BROWSER_ERROR\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/assessments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "assessments"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-a06ec74d-e82e-4753-aaa7-9927b427b3c4"
+                    },
+                    {
+                      "id": "e69a723a-30a5-4504-9a59-d1883a1c8f32",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"event\": {\n    \"token\": \"<string>\",\n    \"siteKey\": \"<string>\",\n    \"userAgent\": \"<string>\",\n    \"userIpAddress\": \"<string>\",\n    \"expectedAction\": \"<string>\"\n  },\n  \"riskAnalysis\": {\n    \"score\": \"<float>\",\n    \"reasons\": [\n      \"LOW_CONFIDENCE_SCORE\",\n      \"LOW_CONFIDENCE_SCORE\"\n    ]\n  },\n  \"tokenProperties\": {\n    \"valid\": \"<boolean>\",\n    \"hostname\": \"<string>\",\n    \"action\": \"<string>\",\n    \"createTime\": \"<dateTime>\",\n    \"invalidReason\": \"BROWSER_ERROR\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/assessments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "assessments"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:49:59.000Z",
+                      "updatedAt": "2026-07-28T01:49:59.000Z",
+                      "uid": "35240-e69a723a-30a5-4504-9a59-d1883a1c8f32"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:49:58.000Z",
+                  "updatedAt": "2026-07-28T01:49:58.000Z",
+                  "uid": "35240-cb751ac5-8a3b-48d9-8d40-963ffc3ecb60"
+                }
+              ],
+              "id": "c93d6dc5-4ee1-448e-ace4-4de54352093f",
+              "createdAt": "2026-07-28T01:49:58.000Z",
+              "updatedAt": "2026-07-28T01:49:58.000Z",
+              "uid": "35240-c93d6dc5-4ee1-448e-ace4-4de54352093f"
+            }
+          ],
+          "id": "cdc01d3c-13eb-42c1-9400-9c9e9a7d8fb0",
+          "createdAt": "2026-07-28T01:49:58.000Z",
+          "updatedAt": "2026-07-28T01:49:58.000Z",
+          "uid": "35240-cdc01d3c-13eb-42c1-9400-9c9e9a7d8fb0"
+        }
+      ],
+      "id": "36135469-7602-4d0d-aa5f-47d184c9021e",
+      "createdAt": "2026-07-28T01:49:58.000Z",
+      "updatedAt": "2026-07-28T01:49:58.000Z",
+      "uid": "35240-36135469-7602-4d0d-aa5f-47d184c9021e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://recaptchaenterprise.googleapis.com/v1"
+    },
+    {
+      "key": "assessmentId",
+      "value": "<string>"
+    }
+  ]
+}
