@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google reCAPTCHA reCAPTCHA Enterprise Assessments API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assessments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google reCAPTCHA Create assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/assessments",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an assessment of a reCAPTCHA token. Returns a risk score between 0.0 and 1.0, reason codes, and token properties."
+        },
+        {
+          "info": {
+            "name": "Google reCAPTCHA Annotate assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recaptchaenterprise.googleapis.com/v1/projects/:projectId/assessments/:assessmentId:annotate",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID"
+              },
+              {
+                "name": "assessmentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Annotates an existing assessment with additional information to improve future risk analysis. Annotations provide feedback on whether the assessment was correct."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
