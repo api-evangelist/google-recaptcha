@@ -88,6 +88,8 @@ apis:
   - type: JSONSchema
     url: json-schema/google-recaptcha-assessment-schema.json
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-recaptcha/overview
   - type: AgenticAccess
@@ -125,3 +127,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google
+x-relationship: product
