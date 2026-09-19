@@ -65,6 +65,8 @@ apis:
   humanURL: https://cloud.google.com/recaptcha-enterprise/docs
   baseURL: https://recaptchaenterprise.googleapis.com
   tags:
+  - Assessment
+  tags_raw:
   - Assessments
   properties:
   - type: OpenAPI
