@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google reCAPTCHA reCAPTCHA Enterprise Assessments Keys API
+  title: Google reCAPTCHA reCAPTCHA Enterprise Keys API
   description: The reCAPTCHA Enterprise API provides bot detection and fraud prevention by creating assessments for user interaction tokens. It supports managing site keys, creating and annotating assessments, and configuring firewall policies.
   version: v1
   contact:
@@ -106,14 +106,6 @@ paths:
         '200':
           description: Key deleted
 components:
-  parameters:
-    projectId:
-      name: projectId
-      in: path
-      required: true
-      description: The Google Cloud project ID
-      schema:
-        type: string
   schemas:
     Key:
       type: object
@@ -164,6 +156,14 @@ components:
           type: string
           format: date-time
           readOnly: true
+  parameters:
+    projectId:
+      name: projectId
+      in: path
+      required: true
+      description: The Google Cloud project ID
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -88,14 +88,6 @@ paths:
         '200':
           description: Annotation recorded
 components:
-  parameters:
-    projectId:
-      name: projectId
-      in: path
-      required: true
-      description: The Google Cloud project ID
-      schema:
-        type: string
   schemas:
     Assessment:
       type: object
@@ -159,6 +151,14 @@ components:
               - DUPE
               - MISSING
               - BROWSER_ERROR
+  parameters:
+    projectId:
+      name: projectId
+      in: path
+      required: true
+      description: The Google Cloud project ID
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2
