@@ -1,0 +1,26 @@
+slug: google-recaptcha
+provider: Google reCAPTCHA
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Assessments
+  spec_file: google-recaptcha-assessments-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: '"provides bot detection and fraud prevention by creating assessments for user interaction
+    tokens"; POST /projects/{projectId}/assessments createAssessment'
+  reason: Operations create and annotate risk assessments of user interactions for bot/abuse detection
+    — a security control capability. Maps to Cybersecurity Management at L1; no L2 fits cleanly (it is
+    neither IAM nor SOC/SIEM incident response), so L2 left null.

@@ -90,6 +90,9 @@ apis:
   - type: JSONSchema
     url: json-schema/google-recaptcha-assessment-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-recaptcha-capability-edges.yml
+    name: Google reCAPTCHA Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
