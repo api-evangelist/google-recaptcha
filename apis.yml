@@ -90,6 +90,12 @@ apis:
   - type: JSONSchema
     url: json-schema/google-recaptcha-assessment-schema.json
 common:
+  - type: Plans
+    url: plans/google-recaptcha-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-recaptcha-rate-limits.yml
+  - type: FinOps
+    url: finops/google-recaptcha-finops.yml
   - type: CapabilityMap
     url: capabilities/google-recaptcha-capability-edges.yml
     name: Google reCAPTCHA Business Capability Map
