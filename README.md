@@ -1,4 +1,4 @@
-# Google reCAPTCHA (google-recaptcha)
+# Google reCAPTCHA
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,150 @@
 
 Google reCAPTCHA is a security service that protects websites and applications from spam and abuse by verifying that interactions are from real humans rather than bots, offering Enterprise and standard APIs for site verification and risk assessment.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-recaptcha/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-recaptcha/refs/heads/main/apis.yml)
+**Areas:** Abuse Prevention · Bot Detection · CAPTCHA · Fraud Prevention · Google Cloud · Security
 
-## Scope
+## Google reCAPTCHA on APIs.io
 
-- **Type:** Index
+Everything profiled for Google reCAPTCHA is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-recaptcha/](https://apis.io/providers/google-recaptcha/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Abuse Prevention
-- Bot Detection
-- CAPTCHA
-- Fraud Prevention
-- Google Cloud
-- Security
+- [reCAPTCHA Site Verify API](https://apis.io/apis/google-recaptcha/recaptcha-site-verify-api/) — The reCAPTCHA Site Verify API is the standard verification endpoint for reCAPTCHA v2 and v3 tokens. After a user completes a reCAPTCHA challenge on the…
+- [Google reCAPTCHA Assessments API](https://apis.io/apis/google-recaptcha/google-recaptcha-assessments-api/) — Create and annotate risk assessments
+- [Google reCAPTCHA Keys API](https://apis.io/apis/google-recaptcha/google-recaptcha-keys-api/) — Manage reCAPTCHA site keys
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### reCAPTCHA Enterprise API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The reCAPTCHA Enterprise API provides advanced bot detection and fraud prevention capabilities for websites and applications. It returns risk scores and reason codes for user interactions, supports creating and managing site keys, assessments, and related resources. The API enables creating assessments for tokens, annotating assessments with feedback, and managing firewall policies for automated protection.
+- [Google Recaptcha Agentic Access](https://apis.io/agentic-access/google-recaptcha/google-recaptcha-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/recaptcha-enterprise/docs](https://cloud.google.com/recaptcha-enterprise/docs)
-- **Base URL:** `https://recaptchaenterprise.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Bot Detection
-- Enterprise
-- Risk Assessment
+- [reCAPTCHA Enterprise Assessment](https://apis.io/schemas/google-recaptcha/google-recaptcha-assessment/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/recaptcha-enterprise/docs/reference/rest)
-- [OpenAPI](openapi/recaptcha-enterprise-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/recaptcha-enterprise.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/recaptcha-enterprise.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/google-recaptcha-assessment-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-### reCAPTCHA Site Verify API
+- [Google Recaptcha Context](https://apis.io/jsonld/google-recaptcha/google-recaptcha-context/)
 
-The reCAPTCHA Site Verify API is the standard verification endpoint for reCAPTCHA v2 and v3 tokens. After a user completes a reCAPTCHA challenge on the frontend, the backend sends the response token to this API to verify the interaction. The API returns whether the verification succeeded, a score (for v3), the action name, and the hostname.
+#### Collections (5)
 
-- **Human URL:** [https://developers.google.com/recaptcha/docs/verify](https://developers.google.com/recaptcha/docs/verify)
-- **Base URL:** `https://www.google.com/recaptcha/api`
+Postman and Open Collection request collections.
 
-#### Tags
+- [Google reCAPTCHA reCAPTCHA Enterprise Assessments API](https://apis.io/collections/google-recaptcha/open-google-recaptcha-assessments-api/)
+- [Google reCAPTCHA reCAPTCHA Enterprise Assessments Keys API](https://apis.io/collections/google-recaptcha/open-google-recaptcha-keys-api/)
+- [Google reCAPTCHA reCAPTCHA Enterprise API](https://apis.io/collections/google-recaptcha/open-recaptcha-enterprise/)
+- [Google reCAPTCHA reCAPTCHA Enterprise Assessments API](https://apis.io/collections/google-recaptcha/postman-google-recaptcha-assessments-api/)
+- [Google reCAPTCHA reCAPTCHA Enterprise Assessments Keys API](https://apis.io/collections/google-recaptcha/postman-google-recaptcha-keys-api/)
 
-- reCAPTCHA V3
-- Token Validation
-- Verification
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://developers.google.com/recaptcha/docs/verify)
-- [Postman Collection](collections/recaptcha-enterprise.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/recaptcha-enterprise.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Google reCAPTCHA — jsonschema rules](https://apis.io/rules/google-recaptcha/google-recaptcha-jsonschema-spectral-rules/)
 
-## Common Properties
+#### Security (3)
 
-- [GitHub Organization](https://github.com/google)
-- [Getting Started](https://cloud.google.com/recaptcha-enterprise/docs/getting-started)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Recaptcha Authentication](https://apis.io/security/google-recaptcha/google-recaptcha-authentication/)
+- [Google Recaptcha Domain Security](https://apis.io/security/google-recaptcha/google-recaptcha-domain-security/)
+- [Google Recaptcha Vulnerability Disclosure](https://apis.io/security/google-recaptcha/google-recaptcha-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Recaptcha Scopes](https://apis.io/scopes/google-recaptcha/google-recaptcha-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Recaptcha Plans Pricing](https://apis.io/plans/google-recaptcha/google-recaptcha-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Recaptcha Rate Limits](https://apis.io/rate-limits/google-recaptcha/google-recaptcha-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Recaptcha Finops](https://apis.io/finops/google-recaptcha/google-recaptcha-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://cloud.google.com/recaptcha-enterprise/docs/getting-started)
 - [Pricing](https://cloud.google.com/recaptcha-enterprise/pricing)
-- [Authentication](https://cloud.google.com/recaptcha-enterprise/docs/authentication)
-- [Console](https://console.cloud.google.com/security/recaptcha)
-- [S D Ks](https://cloud.google.com/recaptcha-enterprise/docs/libraries)
 - [Support](https://cloud.google.com/recaptcha-enterprise/docs/support)
-- [Status Page](https://status.cloud.google.com)
-- [JSON-LD](json-ld/google-recaptcha-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [GitHub](https://github.com/google)
+- [Status](https://status.cloud.google.com)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 41.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 57.3 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 46.4 |
+| Access clarity | 18.4 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 32.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-recaptcha/](https://apis.io/providers/google-recaptcha/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google reCAPTCHA: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-recaptcha/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
